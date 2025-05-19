@@ -1,95 +1,58 @@
 ---
 layout: post
-title: Sample blog post to learn markdown tips
-subtitle: There's lots to learn!
-gh-repo: daattali/beautiful-jekyll
-gh-badge: [star, fork, follow]
-tags: [test]
-comments: true
-mathjax: true
-author: Bill Smith
+title: "Cloud-based Multimodal fMRI Signal Mapping"
+subtitle: "Integrating fMRI, EEG and AI pipelines at scale"
+date: 2025-05-19
+author: "Adrián Redondo Fernández"
+tags: [cloud computing, fMRI, multimodal imaging, AI]
 ---
 
-{: .box-success}
-This is a demo post to show you how to write blog posts with markdown.  I strongly encourage you to [take 5 minutes to learn how to write in markdown](https://markdowntutorial.com/) - it'll teach you how to transform regular text into bold/italics/tables/etc.<br/>I also encourage you to look at the [code that created this post](https://raw.githubusercontent.com/daattali/beautiful-jekyll/master/_posts/2020-02-28-sample-markdown.md) to learn some more advanced tips about using markdown in Beautiful Jekyll.
+## Introduction
 
-**Here is some bold text**
+Combining functional MRI with other modalities like EEG or MEG can reveal richer insights into brain dynamics—but processing and synchronizing large, heterogeneous datasets is tough. A cloud-native pipeline automates ingestion, preprocessing, and AI-driven mapping of multimodal signals.
 
-## Here is a secondary heading
+## Cloud Infrastructure
 
-[This is a link to a different site](https://deanattali.com/) and [this is a link to a section inside this page](#local-urls).
+1. **Data Ingestion**  
+   - Upload raw fMRI NIfTI files and EEG recordings to a secure object store (e.g., Google Cloud Storage).  
+2. **Preprocessing Jobs**  
+   - Trigger Cloud Run functions to run containerized workflows:  
+     - fMRI: motion correction, normalization (FSL/AFNI)  
+     - EEG: artifact removal, filtering (MNE-Python)  
+3. **Orchestration**  
+   - Use Cloud Composer (Airflow) to coordinate tasks, ensuring modalities are time-aligned.
 
-Here's a table:
+## AI Mapping Workflow
 
-| Number | Next number | Previous number |
-| :------ |:--- | :--- |
-| Five | Six | Four |
-| Ten | Eleven | Nine |
-| Seven | Eight | Six |
-| Two | Three | One |
+- **Feature Extraction**  
+  - Compute voxel-wise time series from fMRI and band-power features from EEG.  
+- **Multimodal Fusion**  
+  - Deploy a transformer-based model on Vertex AI to learn joint embeddings of fMRI+EEG signals.  
+- **Brain Mapping**  
+  - Generate activation maps per condition and modality, export as NIfTI heatmaps for visualization.
 
-You can use [MathJax](https://www.mathjax.org/) to write LaTeX expressions. For example:
-When \\(a \ne 0\\), there are two solutions to \\(ax^2 + bx + c = 0\\) and they are $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+## Benefits
 
-How about a yummy crepe?
+- **Scalability:**  
+  Spin up hundreds of CPUs/GPUs for parallel preprocessing and model training.  
+- **Reproducibility:**  
+  Containerized steps ensure consistent results across runs.  
+- **Collaboration:**  
+  Share interactive NeuroGlancer links or JupyterLab notebooks via secure cloud endpoints.
 
-![Crepe](https://beautifuljekyll.com/assets/img/crepe.jpg)
+## Considerations
 
-It can also be centered!
+- **Data Security:**  
+  Encrypt files at rest/in transit, manage IAM roles to restrict access.  
+- **Cost Management:**  
+  Use preemptible instances for heavy compute steps and lifecycle rules to archive raw data.  
+- **Latency:**  
+  Batch and cache intermediate results to minimize repeated I/O.
 
-![Crepe](https://beautifuljekyll.com/assets/img/crepe.jpg){: .mx-auto.d-block :}
+## Conclusion
 
-Here's a code chunk:
+A cloud-based multimodal fMRI mapping pipeline unlocks deeper neuroimaging insights with automated, scalable, and secure workflows. Ready to streamline your next brain study? Let’s connect!
 
-~~~
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-~~~
+---
 
-And here is the same code with syntax highlighting:
-
-```javascript
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-```
-
-And here is the same code yet again but with line numbers:
-
-{% highlight javascript linenos %}
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-{% endhighlight %}
-
-## Boxes
-You can add notification, warning and error boxes like this:
-
-### Notification
-
-{: .box-note}
-**Note:** This is a notification box.
-
-### Warning
-
-{: .box-warning}
-**Warning:** This is a warning box.
-
-### Error
-
-{: .box-error}
-**Error:** This is an error box.
-
-## Local URLs in project sites {#local-urls}
-
-When hosting a *project site* on GitHub Pages (for example, `https://USERNAME.github.io/MyProject`), URLs that begin with `/` and refer to local files may not work correctly due to how the root URL (`/`) is interpreted by GitHub Pages. You can read more about it [in the FAQ](https://beautifuljekyll.com/faq/#links-in-project-page). To demonstrate the issue, the following local image will be broken **if your site is a project site:**
-
-![Crepe](/assets/img/crepe.jpg)
-
-If the above image is broken, then you'll need to follow the instructions [in the FAQ](https://beautifuljekyll.com/faq/#links-in-project-page). Here is proof that it can be fixed:
-
-![Crepe]({{ '/assets/img/crepe.jpg' | relative_url }})
+*Feel free to leave a comment or get in touch for implementation details!*  
