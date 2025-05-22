@@ -9,8 +9,8 @@ author: "Adrián Redondo Fernández"
 
 navbar-links:
   # e.g.
-  # About Me: "aboutme"
-  # Projects: "projects"
+  About Me: "aboutme"
+  Projects: "projects"
   # Blog: "blog"
   # Contact: "contact"
 
