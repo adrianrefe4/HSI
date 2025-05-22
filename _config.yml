@@ -5,19 +5,13 @@ author: "Adrián Redondo Fernández"
 ###############################################
 # --- List of links in the navigation bar --- #
 ###############################################
-# For each link below, please tell me the label and the corresponding markdown filename
-
 navbar-links:
-  # e.g.
   About Me: "aboutme"
   Projects: "projects"
-  # Blog: "blog"
-  # Contact: "contact"
 
 ################
 # --- Logo --- #
 ################
-
 avatar: "/images/adri.jpeg"
 round-avatar: true
 
@@ -28,9 +22,6 @@ social-network-links:
   email: "adrianrefe4@gmail.com"
   linkedin: "adrirefe4"
   github: "adrianrefe4"
-  # twitter: your-twitter-handle
-  # instagram: your-instagram-handle
-  # etc.
 
 ###########################
 # --- General options --- #
@@ -41,8 +32,7 @@ share-links-active:
   linkedin: true
   vk: false
 
-# This is how your site URL will show up in the footer
-url-pretty: "adrirefe4.github.io"  # ← change if different
+url-pretty: "adrirefe4.github.io"
 
 title-on-all-pages: true
 excerpt_length: 50
