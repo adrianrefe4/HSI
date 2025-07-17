@@ -3,6 +3,7 @@ title:  "Mi primera Review"
 date:   2025-07-17 10:00:00 +0200
 tags:   [AI, machine-learning]
 layout: post
+label_color: blue
 ---
 
 Aquí empieza el contenido de mi review.
