@@ -25,7 +25,7 @@ social-network-links:
 collections:
   reviews:
     output: true
-    permalink: /reviews/:title/
+    permalink: /reviews/
   articles:
     output: true
     permalink: /articles/:title/
