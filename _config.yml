@@ -1,50 +1,62 @@
+# ─── Theme & Basic Info ───────────────────────────────────────────────────────
 remote_theme: daattali/beautiful-jekyll@6.0.1
-title: Adrián Redondo Fernández
+title: "Humanist Science Insights"
+description: "Bringing together social sciences, mathematics and artificial intelligence, and neuroscience in search for unconventional sinergies"
 author: "Adrián Redondo Fernández"
 
-###############################################
-# --- List of links in the navigation bar --- #
-###############################################
+# ─── Navegación ───────────────────────────────────────────────────────────────
 navbar-links:
-  About Me: "aboutme"
-  Projects: "projects"
+  Reviews: "/reviews"
+  Articles: "/articles"
+  Projects: "/projects"
+  About: "/about"
 
-################
-# --- Logo --- #
-################
+# ─── Avatar ───────────────────────────────────────────────────────────────────
 avatar: "/images/adri.jpeg"
 round-avatar: true
 
-#####################################
-# --- Footer social media links --- #
-#####################################
+# ─── Redes sociales ──────────────────────────────────────────────────────────
 social-network-links:
   email: "adrianrefe4@gmail.com"
   linkedin: "adrirefe4"
   github: "adrianrefe4"
 
-###########################
-# --- General options --- #
-###########################
-share-links-active:
-  twitter: true
-  facebook: true
-  linkedin: true
-  vk: false
+# ─── Organizar contenido ──────────────────────────────────────────────────────
+collections:
+  reviews:
+    output: true
+    permalink: /reviews/:title/
+  articles:
+    output: true
+    permalink: /articles/:title/
 
-url-pretty: "adrirefe4.github.io"
+defaults:
+  - scope:
+      path: ""
+      type: "reviews"
+    values:
+      layout: "post"
+      comments: true
+      social-share: true
+  - scope:
+      path: ""
+      type: "articles"
+    values:
+      layout: "post"
+      comments: true
+      social-share: true
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
 
-title-on-all-pages: true
-excerpt_length: 50
-feed_show_excerpt: true
-feed_show_tags: true
-post_search: true
-edit_page_button: true
-navbar-var-length: false
-
-######################################
-# --- Colours / background image --- #
-######################################
+# ─── Apariencia ───────────────────────────────────────────────────────────────
 page-col: "#FFFFFF"
 text-col: "#404040"
 link-col: "#008AFF"
@@ -57,38 +69,32 @@ footer-text-col: "#777777"
 footer-link-col: "#404040"
 footer-hover-col: "#0085A1"
 
-################
-# --- Misc --- #
-################
-date_format: "%B %-d, %Y"
+# ─── Opciones generales ───────────────────────────────────────────────────────
+share-links-active:
+  twitter: true
+  facebook: true
+  linkedin: true
 
-#################################################################################
-# ——— You shouldn’t need to touch anything below this line ——— #
-#################################################################################
+url-pretty: "adrirefe4.github.io"
+title-on-all-pages: true
+excerpt_length: 50
+feed_show_excerpt: true
+feed_show_tags: true
+post_search: true
+edit_page_button: true
+navbar-var-length: false
+
+date_format: "%B %-d, %Y"
 timezone: "Europe/Madrid"
 markdown: kramdown
 highlighter: rouge
-permalink: /:year-:month-:day-:title/
+permalink: /:collection/:title/
 paginate: 5
 
 kramdown:
   input: GFM
 
-defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      comments: true
-      social-share: true
-  -
-    scope:
-      path: ""
-    values:
-      layout: "page"
-
+# ─── Exclusiones y plugins ────────────────────────────────────────────────────
 exclude:
   - CHANGELOG.md
   - CNAME
