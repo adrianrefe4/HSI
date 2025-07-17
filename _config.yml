@@ -9,7 +9,7 @@ navbar-links:
   Reviews: "/reviews"
   Articles: "/articles"
   Projects: "/projects"
-  About: "/about"
+  About Me: "/aboutme"
 
 # ─── Avatar ───────────────────────────────────────────────────────────────────
 avatar: "/images/adri.jpeg"
