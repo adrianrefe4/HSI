@@ -6,3 +6,4 @@ layout: post
 ---
 
 
+Comunicacion es la base de todo.
