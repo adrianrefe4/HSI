@@ -3,3 +3,37 @@ layout: home
 title: Humanist Science Insights
 subtitle: Bringing together social sciences, mathematics and artificial intelligence, and neuroscience in search for unconventional sinergies
 ---
+
+
+<section>
+  <h2>Latest Reviews</h2>
+  <ul>
+    {% for review in site.reviews limit:3 %}
+      <li>
+        <a href="{{ review.url }}">{{ review.title }}</a>
+        <span class="post-date">{{ review.date | date: "%b %-d, %Y" }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section>
+  <h2>Latest Articles</h2>
+  <ul>
+    {% for art in site.articles limit:3 %}
+      <li>
+        <a href="{{ art.url }}">{{ art.title }}</a>
+        <span class="post-date">{{ art.date | date: "%b %-d, %Y" }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section>
+  <h2>Featured Projects</h2>
+  <ul>
+    {% for proj in site.projects limit:2 %}
+      <li><a href="{{ proj.url }}">{{ proj.title }}</a></li>
+    {% endfor %}
+  </ul>
+</section>
